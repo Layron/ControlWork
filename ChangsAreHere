@@ -1,0 +1,43 @@
+#include "stdafx.h"
+#include <iostream>
+
+using namespace std;
+
+class Figure
+{
+public:
+	virtual void draw() = 0;
+};
+
+class Cross : public Figure 
+{
+public:
+	void draw() {
+		cout << "  * \n";
+		cout << "* * * \n";
+		cout << "  * \n";
+	}
+};
+class Trapezi : public Figure 
+{
+public:
+	void draw() {
+		cout << "  *** \n";
+		cout << " *   * \n";
+		cout << "******* \n";
+	}
+};
+
+int main()
+{
+	int a;
+	cout << "What figure do you want to draw? Press 1 to draw cross and press 2 to draw trapezi. \n";
+	cin >> a;
+	Figure *A;
+  if (a == 1)
+    A = new Cross;
+  else
+    A = new Trapezi;
+  A->draw();
+    return 0;
+}
